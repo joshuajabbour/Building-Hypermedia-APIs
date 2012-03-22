@@ -59,16 +59,15 @@ app.get('/maze/:m', function (req, res) {
 
 // handle exit 
 app.get('/maze/:m/999', function (req, res) {
-  var mz, cz;
+  var mz;
   
   mz = (req.params.m || 'none');
-  cz = (req.params.c || '0');
 
   res.header('content-type', contentType);
   res.render('exit', {
     site  : 'http://localhost:3000/maze',
     maze  : mz,
-    cell  : cz,
+    cell  : '999',
     total : 0,
     side  : 0,
     debug : '999',
